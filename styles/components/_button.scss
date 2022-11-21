@@ -1,0 +1,121 @@
+.btn {
+  display: flex;
+  align-items: center;
+  border: none;
+
+  cursor: pointer;
+  &-upload {
+    position: relative;
+    background-color: $btn-color-primary;
+    border-radius: 0.8rem;
+    padding: 1.2rem 2.5rem;
+
+    &:hover {
+      background-color: $btn-color-primary-hover;
+    }
+    & svg {
+      width: 2.4rem;
+      height: 2.4rem;
+      padding: 0.4rem;
+      margin-right: 0.8rem;
+    }
+  }
+  &-secondary {
+    position: relative;
+    background-color: $btn-color-secondary;
+    padding: 0.8rem 1.6rem 0.8rem 1.9rem;
+    border-radius: 0.6rem;
+    &:hover {
+      background-color: $btn-color-secondary-hover;
+    }
+    @include respond(phone) {
+      padding: 1.2rem 1.9rem 1.2rem 1.9rem;
+    }
+
+    & div {
+      margin-left: 1.1rem;
+      @include respond(tablet) {
+        display: none;
+      }
+    }
+  }
+  &-share,
+  &-download {
+    width: 50%;
+    border-radius: 8px;
+    padding: 1.6rem 0;
+    color: $btn-color-primary;
+    border: 1px solid $btn-color-primary;
+    background-color: $color-white;
+    align-items: center;
+    justify-content: center;
+    & svg {
+      @include respond(laptop) {
+        width: 20px;
+        height: 20px;
+      }
+      @include respond(tablet) {
+        width: 24px;
+        height: 24px;
+      }
+    }
+    @include respond(tablet) {
+      padding: 1.2rem 0;
+    }
+    @include respond(miniPhone) {
+      padding: 1rem 0;
+    }
+    & svg {
+      margin-right: 0.8rem;
+      fill: $btn-color-primary;
+      @include respond(laptop) {
+        margin-right: 0.4rem;
+      }
+      @include respond(tablet) {
+        margin-right: 0.8rem;
+      }
+    }
+    &:hover .btn-text-primary--purple {
+      color: $btn-color-primary-hover;
+    }
+
+    &:hover {
+      // color: $btn-color-primary-hover;
+      border: 1px solid $btn-color-primary-hover;
+      & svg {
+        fill: $btn-color-primary-hover;
+      }
+    }
+  }
+  &-download {
+    color: $color-white;
+    border: 1px solid transparent;
+    background-color: $btn-color-primary;
+    &:hover {
+      background: $btn-color-primary-hover;
+    }
+  }
+}
+
+.share-btn {
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &--facebook {
+    background-color: rgba(25, 119, 243, 0.1);
+  }
+  &--linkedin {
+    background-color: rgba(10, 123, 186, 0.1);
+  }
+  &--twitter {
+    background-color: rgba(45, 170, 225, 0.1);
+  }
+  &--mail {
+    background-color: rgba(76, 76, 76, 0.1);
+  }
+}

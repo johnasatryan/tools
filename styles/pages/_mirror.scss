@@ -1,0 +1,208 @@
+.main-layout {
+  display: grid;
+  background: $color-white;
+  max-height: 100vh;
+  min-height: 100vh;
+  grid-template-rows: 60px auto;
+  @include respond(laptop) {
+    display: block;
+  }
+  &-grid {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "header header"
+      "main sidebar";
+  }
+}
+
+.mirror-section {
+  position: relative;
+  grid-area: main / main / main / main;
+  background: #e5e5e5;
+  max-height: calc(100vh - 60px);
+  padding-bottom: 3.2rem;
+  overflow: auto;
+  @include respond(laptop) {
+    padding-top: 6rem;
+    padding-bottom: 34.5rem;
+  }
+  &-left {
+    &-wrapper {
+      @include absCenterFlex;
+      height: 100%;
+    }
+    & .processing {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      & h2 {
+        margin-top: 6.4rem;
+        margin-bottom: 4.032rem;
+        @include respond(phone) {
+          margin-top: 2.412rem;
+          margin-bottom: 2.4rem;
+        }
+      }
+      & .loader-wrapper {
+        margin-bottom: 28.668rem;
+        @include respond(desktop) {
+          margin-bottom: 22.668rem;
+        }
+        @include respond(laptop) {
+          margin-bottom: 16.668rem;
+        }
+        @include respond(tablet) {
+          margin-bottom: 11.847rem;
+        }
+      }
+      & .loader-box {
+        position: relative;
+        width: 21.074rem;
+        height: 29.8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $color-white;
+        filter: drop-shadow(0px 3.15523px 3.15523px rgba(0, 0, 0, 0.25));
+        @include respond(phone) {
+          width: 13.774rem;
+          height: 19.2rem;
+        }
+        &-designloader {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 27%;
+          height: 19%;
+          background-image: linear-gradient(45deg, #808080 50%, transparent 50%),
+            linear-gradient(-135deg, #f4f5f8 50%, transparent 50%);
+        }
+      }
+    }
+    & .image-box {
+      display: none;
+      width: 670px;
+      margin: 0 1.6rem 4rem 1.6rem;
+      padding: 1.6rem 1.6rem 2rem 1.6rem;
+      @include respond(laptop) {
+        width: 100%;
+        margin: 0 1.6rem 3.2rem 1.6rem;
+      }
+      &-header {
+        display: flex;
+        &-buttons {
+          flex: 1;
+          align-self: center;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+        }
+        & .refreshbutton {
+          margin-right: 1.2rem;
+        }
+        & button {
+          border: none;
+          background: none;
+          cursor: pointer;
+        }
+      }
+      &-img {
+        position: relative;
+        padding: 16px 0 0 0;
+        text-align: center;
+        & img {
+          display: inline-block;
+          max-height: 100%;
+          vertical-align: top;
+        }
+        &-wrapper > img {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.mirror-section-right {
+  width: 480px;
+  position: relative;
+  max-height: calc(100vh - 60px);
+  grid-area: sidebar / sidebar / sidebar / sidebar;
+  background-color: $color-white;
+  overflow: auto;
+  @include respond(laptop) {
+    left: 0px;
+    width: 100%;
+    bottom: 0px;
+    position: fixed;
+  }
+  & .toolsmenu {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 4rem 4rem;
+    height: 100%;
+    @include respond(tablet) {
+      padding: 1.6rem;
+    }
+
+    &-top {
+      & .tools {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 24px;
+        &-title {
+          font-family: "Gilroy-semibold";
+          font-size: 1.2rem;
+          line-height: 1.6rem;
+          font-feature-settings: "kern" off;
+          color: $color-black;
+          margin-bottom: 0.8rem;
+        }
+        &-flipbutton {
+          width: 100%;
+          display: flex;
+          align-items: flex-start;
+          padding: 0;
+          &-h {
+            margin-right: 1.2rem;
+          }
+          &-h,
+          &-v {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2.25rem 0;
+            background-color: $color-white;
+            border: 2px solid #e3e3e3;
+            border-radius: 8px;
+            cursor: pointer;
+            & div {
+              @include absCenterFlex;
+              width: 3.2rem;
+              height: 3.2rem;
+              margin-bottom: 0.4rem;
+            }
+            &:hover {
+              background: #faeafa;
+              border: 2px solid $btn-color-primary;
+            }
+            @include respond(laptop) {
+              padding: 4rem 0;
+            }
+            @include respond(tablet) {
+              padding: 2.25rem 0;
+            }
+          }
+        }
+      }
+    }
+    &-buttons-box {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+    }
+  }
+}

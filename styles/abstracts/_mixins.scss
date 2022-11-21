@@ -1,0 +1,58 @@
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin absCenterFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// MEDIA QUERY MANAGER
+/*
+0 - 425px:      Phone
+425 - 768px:    Tablet
+768 - 1024px:   laptop
+1024 - 1200px:    desktop
+[1200 - 1440]   Desktop is where our normal styles apply
+
+$breakpoint arguement choices:
+- phone
+- tablet
+- laptop
+- desktop - 1200
+
+
+1em = 16px
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == miniPhone {
+    @media only screen and (max-width: 23.4375em) {
+      @content;
+    } //380px
+  }
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 26.5625em) {
+      @content;
+    } //425px
+  }
+  @if $breakpoint == tablet {
+    @media only screen and (max-width: 48em) {
+      @content;
+    } //768px
+  }
+  @if $breakpoint == laptop {
+    @media only screen and (max-width: 64em) {
+      @content;
+    } //1024px
+  }
+  @if $breakpoint == desktop {
+    @media only screen and (max-width: 75em) {
+      @content;
+    } //1200px
+  }
+}

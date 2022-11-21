@@ -1,0 +1,75 @@
+.notification {
+  display: none;
+  justify-content: space-around;
+  width: 80%;
+  position: absolute;
+  padding: 1.2rem 1.6rem;
+  color: $color-white;
+  background-color: #158380;
+  box-shadow: 0px 4px 16px rgba(17, 18, 54, 0.16);
+  border-radius: 12px;
+  transition: all 3s;
+  &-top {
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    top: 1.5rem;
+    @include respond(phone) {
+      width: 100%;
+    }
+  }
+
+  &-bottom {
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -80px;
+    @include respond(tablet) {
+      width: 95%;
+    }
+  }
+
+  &-left {
+    @include absCenterFlex;
+    gap: 1rem;
+  }
+  &-text {
+    margin-bottom: 0 !important;
+  }
+}
+.error-notification {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem;
+  background-color: #f67e0c;
+  box-shadow: 0px 4px 16px rgba(17, 18, 54, 0.16);
+  border-radius: 12px;
+  position: absolute;
+  top: 0;
+  transition: all 0.4s;
+  @include respond(tablet) {
+    width: 100%;
+    align-items: flex-start;
+  }
+  .btn-close {
+    border: none;
+    cursor: pointer;
+    background: none;
+  }
+  &-left {
+    display: flex;
+    align-items: flex-start;
+    &-text {
+      margin-bottom: 0;
+      margin-left: 1rem;
+      &--sub {
+        color: white;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+}

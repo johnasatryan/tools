@@ -1,0 +1,6 @@
+import { dataTypes } from "./dataTypes";
+
+export type refreshTypes = {
+  setRefreshPopUp: Function;
+  onFlip: Function;
+}

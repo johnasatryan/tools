@@ -1,0 +1,123 @@
+body {
+  font-family: 'Gilroy-regular', sans-serif;
+  font-weight: 400;
+}
+
+.heading-primary {
+  font-family: 'Gilroy-medium';
+  font-weight: 500;
+  font-size: 4.2rem;
+  line-height: 4.9rem;
+  text-align: center;
+  font-feature-settings: 'kern' off;
+  color: $color-primary;
+  @include respond(phone) {
+    font-size: 3rem;
+    line-height: 3.6rem;
+  }
+}
+
+.heading-secondary {
+  font-family: 'Gilroy-semibold';
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: $color-black;
+  @include respond(phone) {
+    font-size: 2rem;
+    line-height: 2.8rem;
+  }
+}
+
+.new-img-heading {
+  font-family: 'Gilroy-semibold';
+  font-style: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  color: #080808;
+}
+
+.paragraph {
+  font-family: 'Gilroy-regular';
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  text-align: center;
+  font-feature-settings: 'kern' off;
+  color: #5f5f5f;
+}
+
+.btn-text-primary {
+  font-family: 'Gilroy-medium';
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  text-align: center;
+  font-feature-settings: 'kern' off;
+  @include respond(laptop) {
+    font-size: 1.3rem;
+  }
+  @include respond(tablet) {
+    font-size: 1.6rem;
+  }
+  @include respond(miniPhone) {
+    font-size: 1.4rem;
+  }
+  &--white {
+    color: $color-white;
+  }
+  &--purple {
+    color: $btn-color-primary;
+  }
+}
+
+.btn-text-secondary {
+  font-family: 'Gilroy-medium';
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  text-align: center;
+  font-feature-settings: 'kern' off;
+  color: $color-grey-dark-2;
+}
+
+.btn-text-tertiary {
+  font-family: 'Gilroy-medium';
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  text-align: center;
+  font-feature-settings: 'kern' off;
+  color: $color-grey-dark-2;
+}
+
+@font-face {
+  font-family: 'Gilroy-bold';
+  src: url('../../src/assets/fonts/Gilroy_Font/Gilroy-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Gilroy-medium';
+  src: url('../../src/assets/fonts/Gilroy_Font/Gilroy-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'Gilroy-regular';
+  src: url('../../src/assets/fonts/Gilroy_Font/Gilroy-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Gilroy-semibold';
+  src: url('../../src/assets/fonts/Gilroy_Font/Gilroy-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: 'Gilroy-black';
+  src: url('../../src/assets/fonts/Gilroy_Font/Gilroy-Black.ttf');
+}
